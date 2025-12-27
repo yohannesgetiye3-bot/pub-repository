@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDT Tours | Ethiopia Luxury Expeditions</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body x-data="{ activeTab: 'home' }">
+
+    <canvas id="bg-animation"></canvas>
+
+    <header class="nav-header">
+        <div class="nav-container">
+            <div class="logo" @click="activeTab = 'home'; window.scrollTo(0,0)">
+                MDT <span class="ethiopia-green italic">TOURS</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#" @click="activeTab = 'home'" :class="activeTab === 'home' ? 'active' : ''">Home</a>
+                <a href="#" @click="activeTab = 'hotels'" :class="activeTab === 'hotels' ? 'active' : ''">Hotels</a>
+                <a href="#" @click="activeTab = 'heritage'" :class="activeTab === 'heritage' ? 'active' : ''">Heritage Map</a>
+                <a href="#contact" @click="activeTab = 'home'">Contact</a>
+            </nav>
+        </div>
+        <button class="btn-pro bg-ethiopia-green">Book Now</button>
+    </header>
+
+    <main x-show="activeTab === 'home'" class="page-content fade-in">
+        <div class="hero-grid">
+            <div class="hero-main glass-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Bete_Giyorgis_Lalibela_Ethiopia.jpg" alt="Lalibela">
+                <div class="hero-overlay">
+                    <h2>Lalibela <br><span class="ethiopia-green">Legacy</span></h2>
+                </div>
+            </div>
+            <div class="hero-side glass-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Simien_Mountains_Ethiopia.jpg" alt="Simien Mountains">
+                <div class="side-overlay">
+                    <h3>Simien Heights</h3>
+                    <button @click="activeTab = 'heritage'" class="btn-pro bg-white">Explore</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="destinations-section">
+            <h3 class="section-title">Signature Destinations</h3>
+            <div id="tour-container" class="grid-layout"></div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="contact-grid">
+                <div>
+                    <h2 class="contact-header">Contact <span class="ethiopia-green">Yohannes</span></h2>
+                    <p class="contact-sub">Direct booking and professional guiding.</p>
+                    <div class="contact-method">
+                        <i class="fa-solid fa-phone ethiopia-green"></i>
+                        <span>+251 19 878 25727</span>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fa-solid fa-envelope ethiopia-green"></i>
+                        <span>yohannesgetiye3@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main x-show="activeTab === 'hotels'" x-cloak class="page-content fade-in">
+        <h2 class="page-title">Luxury <span class="ethiopia-green">Stays</span></h2>
+        <div id="hotel-container" class="grid-layout"></div>
+    </main>
+
+    <main x-show="activeTab === 'heritage'" x-cloak class="page-content fade-in">
+        <h2 class="page-title">Heritage <span class="ethiopia-green">Map</span></h2>
+        <div class="map-placeholder glass-card">
+            <p>Interactive Map Initializing...</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

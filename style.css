@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+body {
+    background-color: #0d0f10;
+    color: #e5e7eb;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.ethiopia-green { color: #2ecc71; }
+.bg-ethiopia-green { background-color: #2ecc71; color: #000; }
+
+#bg-animation {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.glass-card {
+    background: rgba(25, 28, 30, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+/* Navigation */
+.nav-header {
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 50;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(13, 15, 16, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-links a {
+    margin: 0 1rem;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #9ca3af;
+    transition: color 0.3s;
+}
+
+.nav-links a.active {
+    color: #fff;
+    border-bottom: 2px solid #2ecc71;
+}
+
+/* Hero Section */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.hero-main, .hero-side {
+    position: relative;
+    height: 450px;
+}
+
+.hero-main img, .hero-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay, .side-overlay {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 10;
+}
+
+.hero-overlay h2 { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; line-height: 1; }
+
+/* Grid Layouts */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.page-content { padding-top: 8rem; max-width: 1400px; margin: 0 auto; padding-inline: 2rem; }
+
+.btn-pro {
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-pro:hover { transform: translateY(-2px); }
+
+[x-cloak] { display: none !important; }
+
+.fade-in { animation: fadeIn 0.6s ease-out; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
